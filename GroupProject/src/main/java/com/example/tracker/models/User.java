@@ -30,17 +30,13 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message = "Name is required!")
+	@NotBlank(message = "First Name is required!")
 	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
 	private String firstName;
 
-	@NotBlank(message = "Name is required!")
-	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
+	@NotBlank(message = "Last Name is required!")
+	@Size(min = 3, max = 30, message = "Last Name must be between 2 and 30 characters")
 	private String lastName;
-
-	@NotBlank(message = "Location is required!")
-	@Size(min = 2, message = "Location must be atleast 2 characters")
-	private String location;
 
 	@NotBlank(message = "Email is required!")
 	@Email(message = "Please enter a valid email!")
@@ -107,14 +103,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
 	}
 
 	public String getEmail() {
