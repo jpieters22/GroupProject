@@ -23,66 +23,67 @@ import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotBlank(message="Name is required!")
-    @Size(min=3, max=30, message="First Name must be between 2 and 30 characters")
+
+	@NotBlank(message = "Name is required!")
+	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
 	private String firstName;
-	
-	@NotBlank(message="Name is required!")
-    @Size(min=3, max=30, message="First Name must be between 2 and 30 characters")
+
+	@NotBlank(message = "Name is required!")
+	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
 	private String lastName;
-	
-	@NotBlank(message="Location is required!")
-	@Size(min=2, message="Location must be atleast 2 characters")
+
+	@NotBlank(message = "Location is required!")
+	@Size(min = 2, message = "Location must be atleast 2 characters")
 	private String location;
-	
-	@NotBlank(message="Email is required!")
-    @Email(message="Please enter a valid email!")
+
+	@NotBlank(message = "Email is required!")
+	@Email(message = "Please enter a valid email!")
 	private String email;
-	
-	@NotBlank(message="Password is required!")
-    @Size(min=8, max=128, message="Password must be between 8 and 128 characters")
+
+	@NotBlank(message = "Password is required!")
+	@Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
 	private String password;
-	
+
 	@Transient
-	@NotEmpty(message="Confirm Password is required!")
-    @Size(min=8, max=128, message="Confirm Password must be between 8 and 128 characters")
+	@NotEmpty(message = "Confirm Password is required!")
+	@Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters")
 	private String confirmPassword;
 
-	@Column(updatable=false)
+	@Column(updatable = false)
 	@DateTimeFormat(pattern = "yyy-MM-DD HH:mm:ss")
 	private Date createdAt;
-	
+
 	@DateTimeFormat(pattern = "yyy-MM-DD HH:mm:ss")
 	private Date updatedAt;
-	
-    // ==========================
-    //        RELATIONSHIPS
-    // ==========================
-	
-	@OneToMany(mappedBy="owner", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+
+	// ==========================
+	// RELATIONSHIPS
+	// ==========================
+
+	@OneToMany(mappedBy = "owner", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	private List<Job> jobs;
-	
-	
-	public User() {}
-	
-    // ==========================
-    //     GETTERS / SETTERS
-    // ==========================
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = new Date();
-    }
-    @PreUpdate
-    protected void onUpdate() {
-        this.updatedAt = new Date();
-    }
+
+	public User() {
+	}
+
+	// ==========================
+	// GETTERS / SETTERS
+	// ==========================
+	@PrePersist
+	protected void onCreate() {
+		this.createdAt = new Date();
+	}
+
+	@PreUpdate
+	protected void onUpdate() {
+		this.updatedAt = new Date();
+	}
 
 	public Long getId() {
 		return id;
@@ -163,4 +164,4 @@ public class User {
 	public void setJobs(List<Job> jobs) {
 		this.jobs = jobs;
 	}
- }
+}
