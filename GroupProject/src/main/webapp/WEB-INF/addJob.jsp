@@ -49,6 +49,15 @@
     		</select>
     		<form:errors path="type" class="text-danger"/>
     		</section>
+    		<section>
+    			<label for="note">Add a note for yourself!</label>
+    			<textarea name="note" cols="30" rows="10">
+    			</textarea>
+    			<form:errors path="note" class="text-danger"/>
+    		</section>
+    		<section>
+    			<input type="hidden" name="owner" value="${ user_id }" />
+    		</section>
             <button>Save</button>
         </form:form>
 

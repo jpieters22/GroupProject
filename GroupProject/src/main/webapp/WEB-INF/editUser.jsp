@@ -24,7 +24,8 @@
 	<section class="container">
 		<h1>App Tracker</h1>
 		<h2>Register</h2>
-			<form:form action="/register" method="post" modelAttribute="newUser">
+			<form:form action="/views/${person.id}" method="post" modelAttribute="person">
+				<input type="hidden" name="_method" value="put"/>
 				<p>
 			        <form:label path="firstName">First Name:</form:label>
 			        <form:errors path="firstName"/>
@@ -36,26 +37,13 @@
 			        <form:input path="lastName"/>
 			    </p>
 			    <p>
-			        <form:label path="email">Email:</form:label>
-			        <form:errors path="email"/>
-			        <form:input path="email"/>
+			    <form:input type="hidden" path="email"/> 
 			    </p>
 			    <p>
-			        <form:label path="password">Password:</form:label>
-			        <form:errors path="password"/>     
-			        <form:input type="password" path="password" min="0"/>
-			    </p>    
-			   	<p>
-			        <form:label path="confirmPassword">Confirm Password:</form:label>
-			        <form:errors path="confirmPassword"/>     
-			        <form:input type="password" path="confirmPassword" min="0" required/>
-			    </p>    
+			    <form:input type="hidden" path="password" min="0"/>
+			    </p> 
 			    <button>Submit</button>
-			</form:form>
-			<div class="page">
-				<h3>Have an account?</h3>
-				<a class="link" href="/">Login</a>
-			</div> 	
+			</form:form> 	
 	</section>
 </body>
 </html>

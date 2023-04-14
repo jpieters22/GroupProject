@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <meta charset="UTF-8">
-<title>Joy Bundler</title>
+<title>App Tracker</title>
 </head>
 <body>
 	<header>

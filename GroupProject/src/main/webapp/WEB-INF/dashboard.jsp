@@ -16,5 +16,7 @@
 </head>
 <body>
 	<h1>Home</h1>
+	<a href="/view/${theUser.id}/edit">Edit User</a>
+	
 </body>
 </html>
