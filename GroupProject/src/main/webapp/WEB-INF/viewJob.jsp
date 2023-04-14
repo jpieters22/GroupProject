@@ -31,7 +31,7 @@
     	<br />
     	<section>
 		<div>
-			<c:if test="${ theUser.id == user_id }">
+			<c:if test="${ oneJob.owner.id == user_id }">
 				 | 
 				<a href="/job/${oneJob.id}/edit">Edit</a> | 
 				<a href="/delete/${oneJob.id}">Delete</a>
