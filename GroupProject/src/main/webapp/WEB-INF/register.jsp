@@ -48,7 +48,7 @@
 			   	<p>
 			        <form:label path="confirmPassword">Confirm Password:</form:label>
 			        <form:errors path="confirmPassword"/>     
-			        <form:input type="password" path="confirmPassword" min="0" required/>
+			        <form:input type="password" path="confirmPassword" min="0" />
 			    </p>    
 			    <button>Submit</button>
 			</form:form>

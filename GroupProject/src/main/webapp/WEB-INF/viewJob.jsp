@@ -21,7 +21,7 @@
 <body>
     <main>
     	<h1>${ oneJob.position }</h1>
-    	<h2>(added by <c:out value="${theUser.firstName}"></c:out>)</h2> 
+    	<h2>(added by <c:out value="${oneJob.owner.firstName}"></c:out>)</h2> 
     	<br />
     	<h3>Gender: <c:out value="${oneJob.company}"></c:out></h3>
     	<h3>Origin: <c:out value="${oneJob.location}"></c:out></h3>

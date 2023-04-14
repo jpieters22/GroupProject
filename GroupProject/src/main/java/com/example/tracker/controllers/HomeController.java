@@ -54,10 +54,11 @@ public class HomeController {
 	}
 	
 	@PostMapping("/createJob")
-	public String createJob(@Valid @ModelAttribute("jobForm") Job job, BindingResult result,  Model model) {
+	public String createJob(@Valid @ModelAttribute("jobForm") Job job, BindingResult result,  HttpSession session, Model model) {
 		if(result.hasErrors()) {
 			return "addJob.jsp";
 		} else {
+//			job.setOwner(userService.findUser((Long)session.getAttribute("user_id")));
 			jobService.createJob(job);
 			return "redirect:/dashboard";
 		}
