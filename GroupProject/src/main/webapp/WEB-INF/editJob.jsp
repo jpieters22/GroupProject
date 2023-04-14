@@ -56,6 +56,9 @@
 		        <form:input path="note" class="textarea"/>
 		        <form:errors path="note"/>
     		</section>
+    		  <section>
+                <input type="hidden" name="owner" value="${ user_id }">
+            </section>
             <button>Update</button>
         </form:form>
 

@@ -42,6 +42,9 @@
 			    <p>
 			    <form:input type="hidden" path="password" min="0"/>
 			    </p> 
+			    <section>
+                	<input type="hidden" name="owner" value="${ user_id }">
+            	</section>
 			    <button>Submit</button>
 			</form:form> 	
 	</section>

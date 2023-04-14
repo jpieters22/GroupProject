@@ -58,7 +58,7 @@ public class HomeController {
 		if(result.hasErrors()) {
 			return "addJob.jsp";
 		} else {
-//			job.setOwner(userService.findUser((Long)session.getAttribute("user_id")));
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
 			jobService.createJob(job);
 			return "redirect:/dashboard";
 		}
@@ -130,6 +130,7 @@ public class HomeController {
 		if (result.hasErrors()) {
 			return "editJob.jsp";
 		} else {
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
 			jobService.updateJob(oneJob);
 			return "redirect:/dashboard";
 		}

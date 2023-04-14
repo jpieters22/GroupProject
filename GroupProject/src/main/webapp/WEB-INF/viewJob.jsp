@@ -23,11 +23,11 @@
     	<h1>${ oneJob.position }</h1>
     	<h2>(added by <c:out value="${oneJob.owner.firstName}"></c:out>)</h2> 
     	<br />
-    	<h3>Gender: <c:out value="${oneJob.company}"></c:out></h3>
-    	<h3>Origin: <c:out value="${oneJob.location}"></c:out></h3>
+    	<h3>Company Name: <c:out value="${oneJob.company}"></c:out></h3>
+    	<h3>Location: <c:out value="${oneJob.location}"></c:out></h3>
     	<br />
-    	<h4>Meaning: <c:out value="${oneJob.type}"></c:out></h4>
-    	<h4>Meaning: <c:out value="${oneJob.status}"></c:out></h4>
+    	<h4>Employment Type: <c:out value="${oneJob.type}"></c:out></h4>
+    	<h4>Application Status: <c:out value="${oneJob.status}"></c:out></h4>
     	<br />
     	<section>
 		<div>
