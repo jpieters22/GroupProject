@@ -65,13 +65,11 @@ public class HomeController {
 	}
 	
 	@GetMapping("/allJobs")
-    public String allJobs(HttpSession session,@ModelAttribute("job") Job job, Model model) {
+    public String allJobs(HttpSession session, Model model) {
         if(session.getAttribute("user_id") == null) {
             return "redirect:/";
         } else {
-            model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
-            List<Job> getAll = jobService.allJobs();
-            model.addAttribute("getAll", getAll);
+        	model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
             return "allJobs.jsp";
         }
     }

@@ -11,5 +11,5 @@ import com.example.tracker.models.Job;
 public interface JobRepository extends CrudRepository<Job, Long>{
 	
 	List<Job> findAll();
-
+	
 }

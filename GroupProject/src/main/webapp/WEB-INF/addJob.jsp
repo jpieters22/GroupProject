@@ -34,18 +34,18 @@
         	<section>
         	  <select name="status" id="">
         	  	<option value=""></option>
-    			<option value="pending">Pending</option>
-    			<option value="interview">Interview</option>
-    			<option value="declined">Declined</option>
+    			<option value="Pending">Pending</option>
+    			<option value="Interview">Interview</option>
+    			<option value="Declined">Declined</option>
     		</select>
     		<form:errors path="status" class="text-danger"/>
         	</section>
     		<section>
     			<select name="type" id="">
     			<option value=""></option>
-    			<option value="fulltime">Full-Time</option>
-    			<option value="contract">Contract</option>
-    			<option value="partime">Part-Time</option>
+    			<option value="Full-Time">Full-Time</option>
+    			<option value="Contract">Contract</option>
+    			<option value="Part-Time">Part-Time</option>
     		</select>
     		<form:errors path="type" class="text-danger"/>
     		</section>

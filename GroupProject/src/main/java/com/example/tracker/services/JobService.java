@@ -39,9 +39,9 @@ public class JobService {
 	public Job updateJob(Job job) {
 		return jobRepository.save(job);
 	}
-
+	
+	//delete a job
 	public void deleteJob(Long id) {
 		jobRepository.deleteById(id);
 	}
-
 }
