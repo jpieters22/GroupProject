@@ -17,7 +17,6 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,17 +29,13 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotBlank(message = "Name is required!")
+	@NotBlank(message = "First Name is required!")
 	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
 	private String firstName;
 
-	@NotBlank(message = "Name is required!")
-	@Size(min = 3, max = 30, message = "First Name must be between 2 and 30 characters")
+	@NotBlank(message = "Last Name is required!")
+	@Size(min = 3, max = 30, message = "Last Name must be between 2 and 30 characters")
 	private String lastName;
-
-	@NotBlank(message = "Location is required!")
-	@Size(min = 2, message = "Location must be atleast 2 characters")
-	private String location;
 
 	@NotBlank(message = "Email is required!")
 	@Email(message = "Please enter a valid email!")
@@ -51,7 +46,6 @@ public class User {
 	private String password;
 
 	@Transient
-	@NotEmpty(message = "Confirm Password is required!")
 	@Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters")
 	private String confirmPassword;
 
@@ -107,14 +101,6 @@ public class User {
 
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
 	}
 
 	public String getEmail() {
