@@ -32,6 +32,7 @@
                 <form:errors path="location" class="text-danger"/>
             </section>
         	<section>
+        	<label for="status">Application Status</label>
         	  <select name="status" id="">
         	  	<option value=""></option>
     			<option value="Pending">Pending</option>
@@ -41,6 +42,7 @@
     		<form:errors path="status" class="text-danger"/>
         	</section>
     		<section>
+    		<label for="type">Employment Type</label>
     			<select name="type" id="">
     			<option value=""></option>
     			<option value="Full-Time">Full-Time</option>
