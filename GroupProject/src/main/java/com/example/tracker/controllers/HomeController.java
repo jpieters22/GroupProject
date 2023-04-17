@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.tracker.models.Job;
 import com.example.tracker.models.User;
@@ -132,6 +133,14 @@ public class HomeController {
 			jobService.updateJob(oneJob);
 			return "redirect:/dashboard";
 		}
+	}
+	
+	@GetMapping("/search")
+	public String searchJobs(@RequestParam("query") String query, Model model, HttpSession session) {
+		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+		List<Job> jobs = jobService.searchJobs(query);
+		model.addAttribute("jobs", jobs);
+		return "dashboard.jsp";
 	}
 
 }
