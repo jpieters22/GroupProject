@@ -1,47 +1,29 @@
 package com.example.tracker.services;
 
 import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import com.example.tracker.models.Job;
-import com.example.tracker.repositories.JobRepository;
 
-@Service
-public class JobService {
+
+public interface JobService {
 	
-	@Autowired
-	private JobRepository jobRepository;
 	
 	//returns all jobs
-	public List<Job>allJobs() {
-		return jobRepository.findAll();
-	}
+	public List<Job>allJobs();
 	
 	//create a job
-	public Job createJob(Job job) {
-		return jobRepository.save(job);
-	}
+	public Job createJob(Job job);
 	
 	//find job by id
-	public Job findJob(Long id) {
-		Optional<Job> optionalJob = jobRepository.findById(id);
-		if(optionalJob.isPresent()) {
-			return optionalJob.get();
-		}else {
-			return null;
-		}
-	}
+	public Job findJob(Long id);
 	
 	//update a job
-	public Job updateJob(Job job) {
-		return jobRepository.save(job);
-	}
+	public Job updateJob(Job job);
 	
 	//delete a job
-	public void deleteJob(Long id) {
-		jobRepository.deleteById(id);
-	}
+	public void deleteJob(Long id);
+	
+	//search for a job
+	List<Job> searchJobs(String query);
+	
 }
