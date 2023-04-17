@@ -6,53 +6,56 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <!-- Bootstrap CSS -->
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> -->
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> 
+
 <!-- My CSS -->
-<link rel='stylesheet' href='/css/styles.css'>
-<script type = "text/javascript" src='/js/scripts.js'></script>
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <meta charset="UTF-8">
-<title>Register</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<header>
-		<h1>Registration</h1>
-	</header>
-	<main>
-		<form:form action="/register" method="POST" modelAttribute="newUser">
-				<section>
-					<form:label path="firstName">First Name</form:label>
-					<form:input type="text" class="input" path="firstName" />
-					<form:errors path="firstName" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="lastName">Last Name</form:label>
-					<form:input type="text" class="input" path="lastName" />
-					<form:errors path="lastName" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="email">Email</form:label>
-					<form:input type="email" class="input" path="email" />
-					<form:errors path="email" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="password">Password</form:label>
-					<form:input type="password" class="input" path="password" />
-					<form:errors path="password" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="confirmPassword">Confirm Password</form:label>
-					<form:input type="password" class="input" path="confirmPassword" />
-					<form:errors path="confirmPassword" class="text-danger" />
-				</section>
-				<button class="btn btn-primary">Register and Login</button>
+	<section class="container">
+		<h1>App Tracker</h1>
+		<h2>Register</h2>
+			<form:form action="/register" method="post" modelAttribute="newUser">
+				<p>
+			        <form:label path="firstName">First Name:</form:label>
+			        <form:errors path="firstName"/>
+			        <form:input path="firstName"/>
+			    </p>
+			    <p>
+			        <form:label path="lastName">Last Name:</form:label>
+			        <form:errors path="lastName"/>
+			        <form:input path="lastName"/>
+			    </p>
+			    <p>
+			        <form:label path="email">Email:</form:label>
+			        <form:errors path="email"/>
+			        <form:input path="email"/>
+			    </p>
+			    <p>
+			        <form:label path="password">Password:</form:label>
+			        <form:errors path="password"/>     
+			        <form:input type="password" path="password" min="0"/>
+			    </p>    
+			   	<p>
+			        <form:label path="confirmPassword">Confirm Password:</form:label>
+			        <form:errors path="confirmPassword"/>     
+			        <form:input type="password" path="confirmPassword" min="0" />
+			    </p>    
+			    <button>Submit</button>
 			</form:form>
-			<h3>Have an account?</h3> <button><a href="/">Login</a></button>
-	</main>
+			<div class="page">
+				<h3>Have an account?</h3>
+				<a class="link" href="/">Login</a>
+			</div> 	
+	</section>
 </body>
 </html>

@@ -130,6 +130,14 @@ public class Job {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
 
 	public Date getCreatedAt() {
 		return createdAt;

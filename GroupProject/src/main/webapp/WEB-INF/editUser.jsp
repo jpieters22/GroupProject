@@ -6,48 +6,47 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <!-- Bootstrap CSS -->
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> -->
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> 
+
 <!-- My CSS -->
-<link rel='stylesheet' href='/css/styles.css'>
-<script type = "text/javascript" src='/js/scripts.js'></script>
+<link rel="stylesheet" type="text/css" href="/css/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <meta charset="UTF-8">
-<title>Update Account</title>
+<title>Insert title here</title>
 </head>
 <body>
-<header>
+	<section class="container">
 		<h1>App Tracker</h1>
-		<h1>Edit User</h1>
-	</header>
-	<main>
-		<form:form action="/views/${theUser.id}" method="POST" modelAttribute="theUser">
-		<input type="hidden" name="_method" value="put">
-				<section>
-					<form:label path="firstName">Update First Name</form:label>
-					<form:input type="text" class="input" path="firstName" />
-					<form:errors path="firstName" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="lastName">Update Last Name</form:label>
-					<form:input type="text" class="input" path="lastName" />
-					<form:errors path="lastName" class="text-danger" />
-				</section>
-				<section>
-					<form:input type="hidden" path="email" class="text-danger" />
-				</section>
-				<section>
-					<form:input type="hidden" path="password" class="text-danger" />
-				</section>
-				<section>
-                	<input type="hidden" name="owner" value="${ user_id }" />
+		<h2>Register</h2>
+			<form:form action="/views/${person.id}" method="post" modelAttribute="person">
+				<input type="hidden" name="_method" value="put"/>
+				<p>
+			        <form:label path="firstName">First Name:</form:label>
+			        <form:errors path="firstName"/>
+			        <form:input path="firstName"/>
+			    </p>
+			    <p>
+			        <form:label path="lastName">Last Name:</form:label>
+			        <form:errors path="lastName"/>
+			        <form:input path="lastName"/>
+			    </p>
+			    <p>
+			    <form:input type="hidden" path="email"/> 
+			    </p>
+			    <p>
+			    <form:input type="hidden" path="password" min="0"/>
+			    </p> 
+			    <section>
+                	<input type="hidden" name="owner" value="${ user_id }">
             	</section>
-				<button class="btn btn-primary">Update</button>
-			</form:form>
-	</main>
+			    <button>Submit</button>
+			</form:form> 	
+	</section>
 </body>
 </html>

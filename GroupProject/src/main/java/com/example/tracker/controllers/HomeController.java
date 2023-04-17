@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.tracker.models.Job;
 import com.example.tracker.models.User;
@@ -22,99 +23,124 @@ import com.example.tracker.services.UserService;
 
 @Controller
 public class HomeController {
-
-	@Autowired
-	private JobService jobService;
 	
 	@Autowired
 	private UserService userService;
 	
-    @GetMapping("/dashboard")
-    public String dashboard(HttpSession session, Model model) {
+	@Autowired
+	private JobService jobService;
+	
+	
+	@GetMapping("/dashboard")
+	public String dashboard(HttpSession session, Model model) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		} else {
+		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+		
+		List<Job> getAll = jobService.allJobs();
+		model.addAttribute("getAll", getAll);
+		return "dashboard.jsp";
+		}
+	}
+	
+	@GetMapping("/addJob")
+	public String addJob(HttpSession session, @ModelAttribute("jobForm") Job job,Model model) {
+		if(session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		} else {
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+			return "addJob.jsp";
+		}
+	}
+	
+	@PostMapping("/createJob")
+	public String createJob(@Valid @ModelAttribute("jobForm") Job job, BindingResult result,  HttpSession session, Model model) {
+		if(result.hasErrors()) {
+			return "addJob.jsp";
+		} else {
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+			jobService.createJob(job);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@GetMapping("/allJobs")
+    public String allJobs(HttpSession session, Model model) {
         if(session.getAttribute("user_id") == null) {
             return "redirect:/";
         } else {
-        model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
-
-        List<Job> getAll = jobService.allJobs();
-        model.addAttribute("getAll", getAll);
-        return "home.jsp";
+        	model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+            return "allJobs.jsp";
         }
     }
-    
-    @GetMapping("/addJob")
-    public String addJob(HttpSession session, @ModelAttribute("jobForm") Job job, Model model) {
-    	if(session.getAttribute("user_id") == null) {
-    		return "redirect:/";
-    	} else {
-    		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
-    		return "addJob.jsp";
-    	}
-    }
-    
-    @PostMapping("/createJob")
-    public String createSticker(@Valid @ModelAttribute("jobForm") Job job, BindingResult result, Model model, HttpSession session) {
-    	if(result.hasErrors()) {
-    		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
-    		return "addJob.jsp";
-    	} else {
-    		jobService.createItem(job);
-    		return "redirect:/allJobs";
-    	}
-    }
-    
-    @GetMapping("/allJobs")
-    public String allJobs(HttpSession session, @ModelAttribute("job") Job job, Model model) {
-    	if(session.getAttribute("user_id") == null) {
-    		return "redirect:/";
-    	} else {
-    		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
-    		List<Job> getAll = jobService.allJobs();
-    		model.addAttribute("getAll", getAll);
-            return "allJobs.jsp";
-    	}
-    }
-    
-    @GetMapping("/view/{id}/edit")
-    public String editUser(HttpSession session, @PathVariable("id") Long id, @ModelAttribute("theUser")User user, Model model) {
-    	if(session.getAttribute("user_id") == null) {
-    		return "redirect:/";
-    	} else {
-    		model.addAttribute("theUser", userService.findUser(id));
-    		return "editUser.jsp";
-    	}
-    }
-    
-    @PutMapping("/views/{id}")
-    public String updateUser(@PathVariable("id") Long id, @Valid @ModelAttribute("theUser")User user, BindingResult result, Model model) {
-    	if(result.hasErrors()) {
-    		model.addAttribute("theUser", userService.findUser(id));
-    		return "editUser.jsp";
-    	} else {
-    		userService.updateOne(user);
-    		return "redirect:/dashboard";
-    	}
-    }
-    
-    @GetMapping("/job/{id}/edit")
-    public String editJob(HttpSession session, @PathVariable("id") Long id, @ModelAttribute("job")Job job, Model model) {
-    	if(session.getAttribute("user_id") == null) {
-    		return "redirect:/";
-    	} else {
-    		model.addAttribute("job", jobService.findJob(id));
-    		return "editJob.jsp";
-    	}
-    }
-    
-    @PutMapping("/jobs/{id}")
-    public String updateJob(@PathVariable("id") Long id, @Valid @ModelAttribute("Job")Job job, BindingResult result, Model model) {
-    	if(result.hasErrors()) {
-    		model.addAttribute("job", jobService.findJob(id));
-    		return "editJob.jsp";
-    	} else {
-    		jobService.updateJob(job);
-    		return "redirect:/dashboard";
-    	}
-    }
-    
+
+	@GetMapping("/view/{id}/edit")
+	public String editPerson(HttpSession session, @PathVariable("id") Long id, @ModelAttribute("person") User person, Model model) {
+		if (session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		} else {
+			
+			model.addAttribute("person", userService.findUser(id));
+			return "editUser.jsp";
+		}
+	}
+
+	@PutMapping("/views/{id}")
+	public String updatePerson(HttpSession session, @PathVariable("id") Long id, @Valid @ModelAttribute("person") User person,
+			BindingResult result, Model model) {
+		if (result.hasErrors()) {
+			return "editUser.jsp";
+		} else {
+			
+			userService.updateOne(person);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@GetMapping("/job/{id}")
+	public String viewJob(HttpSession session, @PathVariable("id") Long id,
+			Model model) {
+		if (session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		} else {
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+			Job oneJob = jobService.findJob(id);
+			model.addAttribute("oneJob", oneJob);
+			return "viewJob.jsp";
+		}
+	}
+	
+	@GetMapping("/job/{id}/edit")
+	public String editJob(HttpSession session, @PathVariable("id") Long id, Model model) {
+		if (session.getAttribute("user_id") == null) {
+			return "redirect:/";
+		} else {
+			
+			Job oneJob = jobService.findJob(id);
+			model.addAttribute("oneJob", oneJob);
+			return "editJob.jsp";
+		}
+	}
+
+	@PutMapping("/job/{id}")
+	public String updateJob(@Valid @ModelAttribute("oneJob") Job oneJob,
+			BindingResult result, Model model, @PathVariable("id") Long id, HttpSession session) {
+		if (result.hasErrors()) {
+			return "editJob.jsp";
+		} else {
+			model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+			jobService.updateJob(oneJob);
+			return "redirect:/dashboard";
+		}
+	}
+	
+	@GetMapping("/search")
+	public String searchJobs(@RequestParam("query") String query, Model model, HttpSession session) {
+		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+		List<Job> jobs = jobService.searchJobs(query);
+		model.addAttribute("jobs", jobs);
+		return "dashboard.jsp";
+	}
+
 }

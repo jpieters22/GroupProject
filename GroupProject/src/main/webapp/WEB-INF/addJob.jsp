@@ -6,25 +6,16 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Bootstrap CSS -->
-<!-- <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css"> -->
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-<!-- My CSS -->
-<link rel='stylesheet' href='/css/styles.css'>
-<script type = "text/javascript" src='/js/scripts.js'></script>
 <meta charset="UTF-8">
-<title>Add Job</title>
+<title>Insert title here</title>
 </head>
 <body>
-	<header>
-		<h1>Add Job</h1>
-	</header>
-	<main>
-		<form:form action="/createJob" method="post" modelAttribute="jobForm">
+	<form:form action="/createJob" method="post" modelAttribute="jobForm">
             <section>
                 <label for="position">Position</label>
                 <input type="text" name="position" id="">
@@ -40,34 +31,37 @@
                 <input type="text" name="location" id="">
                 <form:errors path="location" class="text-danger"/>
             </section>
-            <section>
-            <select name="status" id="">
-            	<option value=""></option>
-            	<option value="pending">Pending</option>
-                <option value="interview">Interview</option>
-                <option value="declined">Declined</option>
-            </select>
-            <form:errors path="status" class="text-danger"/>
-            </section>
-            <section>
-            <select name="type" id="">
-            	<option value=""></option>
-            	<option value="fulltime">Full Time</option>
-                <option value="contract">Contract</option>
-                <option value="partime">Part-Time</option>
-            </select>
-            <form:errors path="type" class="text-danger"/>
-            </section>
-            <section>
-                <label for="note">Add a note for yourself!</label>
-                <textarea name="note" rows="10" cols="30"></textarea>
-                <form:errors path="note" class="text-danger"/>
-            </section>
-            <section>
-                <input type="hidden" name="owner" value="${ user_id }" />
-            </section>
+        	<section>
+        	<label for="status">Application Status</label>
+        	  <select name="status" id="">
+        	  	<option value=""></option>
+    			<option value="Pending">Pending</option>
+    			<option value="Interview">Interview</option>
+    			<option value="Declined">Declined</option>
+    		</select>
+    		<form:errors path="status" class="text-danger"/>
+        	</section>
+    		<section>
+    		<label for="type">Employment Type</label>
+    			<select name="type" id="">
+    			<option value=""></option>
+    			<option value="Full-Time">Full-Time</option>
+    			<option value="Contract">Contract</option>
+    			<option value="Part-Time">Part-Time</option>
+    		</select>
+    		<form:errors path="type" class="text-danger"/>
+    		</section>
+    		<section>
+    			<label for="note">Add a note for yourself!</label>
+    			<textarea name="note" cols="30" rows="10">
+    			</textarea>
+    			<form:errors path="note" class="text-danger"/>
+    		</section>
+    		<section>
+    			<input type="hidden" name="owner" value="${ user_id }" />
+    		</section>
             <button>Save</button>
         </form:form>
-	</main>
+
 </body>
 </html>
