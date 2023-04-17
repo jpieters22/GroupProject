@@ -6,8 +6,6 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,33 +17,12 @@
 <link rel='stylesheet' href='/css/styles.css'>
 <script type = "text/javascript" src='/js/scripts.js'></script>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Dashboard</title>
 </head>
 <body>
-	<header>
-		<h1>Login</h1>
-		<nav>
-		
-		</nav>
-	</header>
-    <main>
-			<form:form action="/login" method="POST" modelAttribute="newLogin">
-				<section>
-					<form:label path="email">Email</form:label>
-					<form:input type="email" class="input" path="email" />
-					<form:errors path="email" class="text-danger" />
-				</section>
-				<section>
-					<form:label path="password">Password</form:label>
-					<form:input type="password" class="input" path="password" />
-					<form:errors path="password" class="text-danger" />
-				</section>
-				<button class="btn btn-primary">Login</button>
-			</form:form>
-			<h3>Register here</h3> <button><a href="/register">Register</a></button>
-    </main>
-	<footer>
-	
-	</footer>
+<h1>Dashboard</h1>
+
+<button><a href="/view/${theUser.id}/edit">Update Account</a></button>
+
 </body>
 </html>

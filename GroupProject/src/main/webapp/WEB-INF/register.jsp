@@ -6,8 +6,6 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,17 +17,24 @@
 <link rel='stylesheet' href='/css/styles.css'>
 <script type = "text/javascript" src='/js/scripts.js'></script>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Register</title>
 </head>
 <body>
 	<header>
-		<h1>Login</h1>
-		<nav>
-		
-		</nav>
+		<h1>Registration</h1>
 	</header>
-    <main>
-			<form:form action="/login" method="POST" modelAttribute="newLogin">
+	<main>
+		<form:form action="/register" method="POST" modelAttribute="newUser">
+				<section>
+					<form:label path="firstName">First Name</form:label>
+					<form:input type="text" class="input" path="firstName" />
+					<form:errors path="firstName" class="text-danger" />
+				</section>
+				<section>
+					<form:label path="lastName">Last Name</form:label>
+					<form:input type="text" class="input" path="lastName" />
+					<form:errors path="lastName" class="text-danger" />
+				</section>
 				<section>
 					<form:label path="email">Email</form:label>
 					<form:input type="email" class="input" path="email" />
@@ -40,12 +45,14 @@
 					<form:input type="password" class="input" path="password" />
 					<form:errors path="password" class="text-danger" />
 				</section>
-				<button class="btn btn-primary">Login</button>
+				<section>
+					<form:label path="confirmPassword">Confirm Password</form:label>
+					<form:input type="password" class="input" path="confirmPassword" />
+					<form:errors path="confirmPassword" class="text-danger" />
+				</section>
+				<button class="btn btn-primary">Register and Login</button>
 			</form:form>
-			<h3>Register here</h3> <button><a href="/register">Register</a></button>
-    </main>
-	<footer>
-	
-	</footer>
+			<h3>Have an account?</h3> <button><a href="/">Login</a></button>
+	</main>
 </body>
 </html>

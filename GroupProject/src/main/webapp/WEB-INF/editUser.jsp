@@ -6,8 +6,6 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!-- for validation -->
 <%@ page isErrorPage="true" %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,33 +17,37 @@
 <link rel='stylesheet' href='/css/styles.css'>
 <script type = "text/javascript" src='/js/scripts.js'></script>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Update Account</title>
 </head>
 <body>
-	<header>
-		<h1>Login</h1>
-		<nav>
-		
-		</nav>
+<header>
+		<h1>App Tracker</h1>
+		<h1>Edit User</h1>
 	</header>
-    <main>
-			<form:form action="/login" method="POST" modelAttribute="newLogin">
+	<main>
+		<form:form action="/views/${theUser.id}" method="POST" modelAttribute="theUser">
+		<input type="hidden" name="_method" value="put">
 				<section>
-					<form:label path="email">Email</form:label>
-					<form:input type="email" class="input" path="email" />
-					<form:errors path="email" class="text-danger" />
+					<form:label path="firstName">Update First Name</form:label>
+					<form:input type="text" class="input" path="firstName" />
+					<form:errors path="firstName" class="text-danger" />
 				</section>
 				<section>
-					<form:label path="password">Password</form:label>
-					<form:input type="password" class="input" path="password" />
-					<form:errors path="password" class="text-danger" />
+					<form:label path="lastName">Update Last Name</form:label>
+					<form:input type="text" class="input" path="lastName" />
+					<form:errors path="lastName" class="text-danger" />
 				</section>
-				<button class="btn btn-primary">Login</button>
+				<section>
+					<form:input type="hidden" path="email" class="text-danger" />
+				</section>
+				<section>
+					<form:input type="hidden" path="password" class="text-danger" />
+				</section>
+				<section>
+                	<input type="hidden" name="owner" value="${ user_id }" />
+            	</section>
+				<button class="btn btn-primary">Update</button>
 			</form:form>
-			<h3>Register here</h3> <button><a href="/register">Register</a></button>
-    </main>
-	<footer>
-	
-	</footer>
+	</main>
 </body>
 </html>
