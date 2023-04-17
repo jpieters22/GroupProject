@@ -44,6 +44,8 @@ public class Job {
 	@NotBlank(message="Status is required!")
 	private String status;
 	
+	private String note;
+	
 	@Column(updatable=false)
 	@DateTimeFormat(pattern = "yyy-MM-DD HH:mm:ss")
 	private Date createdAt;
@@ -118,6 +120,14 @@ public class Job {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public String getNote() {
+		return note;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
 	}
 
 	public Date getCreatedAt() {
