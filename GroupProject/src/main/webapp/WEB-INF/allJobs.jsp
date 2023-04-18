@@ -56,7 +56,16 @@
 			</tbody>
 		</table>
 	</c:if>
-	<h1>Get All Jobs</h1>
+	<h1>All Jobs</h1>
+	<div>
+		<c:set var="count" scope="page" value="0" />
+		<c:forEach var="job" items="${ theUser.jobs }">
+			<c:if test="${job.position != null}">
+	   		<c:set var="count" scope="page" value="${count + 1}" />
+	   </c:if>
+		</c:forEach>
+		<h4><c:out value="${count }"></c:out> Jobs found</h4>
+	</div>
 	<div class="container">
 		<c:forEach var="j" items="${ theUser.jobs }">
 			<h3>Position: <c:out value="${j.position }"></c:out></h3>
