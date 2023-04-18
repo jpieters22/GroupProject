@@ -8,11 +8,12 @@
 <%@ page isErrorPage="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>App Dashboard</title>
 </head>
 <body>
 	<h1>Job Status Count</h1>
@@ -73,8 +74,5 @@
 			</tbody>
 		</table>
 	</c:if>
-	
-
-	
 </body>
 </html>
