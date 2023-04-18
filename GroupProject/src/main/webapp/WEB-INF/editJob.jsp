@@ -67,7 +67,9 @@
 			<section>
 				<input type="hidden" name="owner" value="${ user_id }">
 			</section>
-			<button>Update</button>
+			<c:if test="${ oneJob.owner.id == user_id }">
+				<button>Update</button>
+			</c:if>
 		</form:form>
 	</div>
 
