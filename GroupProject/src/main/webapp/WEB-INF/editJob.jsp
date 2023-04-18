@@ -9,17 +9,17 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Edit Job</title>
-	<!-- used for linking css stylesheet from resources/static/css -->
-	<link href="css/styles.css" rel="stylesheet"> 
-	<link href="css/form.css" rel="stylesheet"> 
-	<!-- ==================================== -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<!-- used for linking css stylesheet from resources/static/css -->
+	<link href="/css/styles.css" rel="stylesheet">
+	<link href="/css/form.css" rel="stylesheet">
+	<!-- ==================================== -->
 </head>
 <body class="d-flex justify-content-center">
 	<div class="container m-5">
@@ -61,7 +61,7 @@
 			<form:errors path="status" class="text-danger fw-semibold"/>
 			<section class="mt-2 d-flex justify-content-between align-items-center">
 				<form:label class="form-label col-6" path="note">Update your note!</form:label>
-				<textarea name="note" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				<textarea name="note" class="form-control" rows="3"></textarea>
 			</section>
 			<form:errors path="note" class="text-danger fw-semibold"/>
 			<section>
