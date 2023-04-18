@@ -107,14 +107,6 @@ public class Job {
 		this.location = location;
 	}
 
-	public String getNote() {
-		return note;
-	}
-
-	public void setNote(String note) {
-		this.note = note;
-	}
-
 	public String getType() {
 		return type;
 	}
