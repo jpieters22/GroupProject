@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+.topNav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+
+/* .jobHeader{
+    background-color: #0D6EFD;
+} */
+
+h1 {
+    color: #0D6EFD;
+    background-color: #0D6EFD;
+}

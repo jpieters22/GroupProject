@@ -12,9 +12,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Edit Job</title>
 </head>
 <body>
+<h1>Update your Job!</h1>
 	<form:form action="/job/${oneJob.id}" method="post" modelAttribute="oneJob">
 		<input type="hidden" name="_method" value="put"/>
     		<p>
