@@ -10,7 +10,6 @@
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
-<html>
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,15 +62,12 @@
 			<section class="mt-2 d-flex justify-content-between align-items-center">
 				<form:label class="form-label col-6" path="note">Update your note!</form:label>
 				<textarea name="note" class="form-control" rows="3"></textarea>
-				<textarea name="note" class="form-control" rows="3"></textarea>
 			</section>
 			<form:errors path="note" class="text-danger fw-semibold"/>
 			<section>
 				<input type="hidden" name="owner" value="${ user_id }">
 			</section>
-			<c:if test="${ oneJob.owner.id == user_id }">
-				<button>Update</button>
-			</c:if>
+			<button>Update</button>
 		</form:form>
 	</div>
 
