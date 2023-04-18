@@ -14,13 +14,15 @@ form > section {
 form > section > label {
     font-weight: bolder;
 }
+
+
+/* button styling and pseudo */
 form > button {
     border: 0.75px;
     width: 5em;
     padding: 1em;
     border-radius: 0.5em;
 }
-
 form > button:hover {
     background-color: rgb(121, 121, 121);
     color: whitesmoke;
