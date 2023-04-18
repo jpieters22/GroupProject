@@ -35,18 +35,18 @@
 		    <p>
 			<form:label path="type">Employment Type:</form:label>
 		    <form:select path="type">
-		       <form:option value="fulltime" path="type">Full-Time</form:option>
-		       <form:option value="parttime" path="type">Part-Time</form:option>
-		       <form:option value="contract" path="type">Contract</form:option>
+		       <form:option value="Full-Time" path="type">Full-Time</form:option>
+		       <form:option value="Part-Time" path="type">Part-Time</form:option>
+		       <form:option value="Contract" path="type">Contract</form:option>
 		    </form:select>
     		<form:errors path="type" class="text-danger"/>
 		    </p>
 		    <p>
 		    <form:label path="status">Application Status:</form:label>
 		    <form:select path="status">
-		       <form:option value="pending" path="type">Pending</form:option>
-		       <form:option value="declined" path="type">Declined</form:option>
-		       <form:option value="interview" path="type">Interview</form:option>
+		       <form:option value="Pending" path="type">Pending</form:option>
+		       <form:option value="Declined" path="type">Declined</form:option>
+		       <form:option value="Interview" path="type">Interview</form:option>
 		    </form:select>
     		<form:errors path="status" class="text-danger"/>
 		    </p>   
