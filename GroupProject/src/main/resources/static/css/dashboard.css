@@ -1,0 +1,12 @@
+@charset "UTF-8";
+.topNav {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+}
+h1 {
+    color: white;
+    background-color: #0D6EFD;
+}
