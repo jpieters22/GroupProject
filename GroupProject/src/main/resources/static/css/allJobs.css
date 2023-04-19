@@ -1,0 +1,16 @@
+@charset "ISO-8859-1";
+
+.searchResults{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.getAll {
+    padding-left: 10%;
+}
+
+.card {
+    margin: 0;
+}

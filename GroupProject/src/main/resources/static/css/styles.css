@@ -1,11 +1,17 @@
 @charset "UTF-8";
 
-.page {
-	display: flex;
+/* icons */
+/* <i class="fa-thin fa-objects-column fa-xs"></i> */
+
+*{
+    /* background-color: pink; */
+}
+#image {
+	width:75%;
+}
+.link {
+	text-decoration:none;
+	font-size: 20px;
+	margin-left:30px;
 }
 
-.link {
-	padding-left: 15px;
-	font-size: 25px;
-	text-decoration: none;
-}

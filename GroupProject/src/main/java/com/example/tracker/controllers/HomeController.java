@@ -1,11 +1,15 @@
 package com.example.tracker.controllers;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -14,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.tracker.models.Job;
 import com.example.tracker.models.User;
@@ -133,5 +138,31 @@ public class HomeController {
 			return "redirect:/dashboard";
 		}
 	}
+	
+	@GetMapping("/search")
+	public String searchJobs(@RequestParam("query") String query, Model model, HttpSession session) {
+		model.addAttribute("theUser", userService.findUser((Long)session.getAttribute("user_id")));
+		List<Job> jobs = jobService.searchJobs(query);
+		model.addAttribute("jobs", jobs);
+		return "allJobs.jsp";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String destroy(@PathVariable("id") Long id) {
+		jobService.deleteJob(id);
+		return "redirect:/allJobs";
+	}
+	
+	@GetMapping("/get-data")
+    public ResponseEntity<Map<String, Integer>> getPieChart() {
+        Map<String, Integer> graphData = new TreeMap<>();
+
+        graphData.put("Declined", 7);
+        graphData.put("Pending", 6);
+        graphData.put("Interview", 9);
+        graphData.put("Total", 22);
+
+        return new ResponseEntity<>(graphData, HttpStatus.OK);
+    }
 
 }
