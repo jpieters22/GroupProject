@@ -22,6 +22,7 @@
 <meta charset="UTF-8">
 <title>Register</title>
 </head>
+
 <body class="d-flex justify-content-center">
 	<div class="container m-5">
 		<h1 class="text-center">Register</h1>
@@ -52,6 +53,7 @@
 			</section>
 			<form:errors path="confirmPassword" class="text-danger fw-semibold" />
 			<button class="btn btn-outline-primary">Register</button>
+
 		</form:form>
 		<h3>Have an Account?</h3>
 			<a class="link" href="/">Login</a>
