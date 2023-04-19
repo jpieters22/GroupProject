@@ -30,3 +30,9 @@ form > button:hover {
 form > button:active {
     transform: scale(0.95);
 }
+.btn {
+	border: 0.75px;
+    width: 5em;
+    padding: 1em;
+    border-radius: 0.5em;
+}
