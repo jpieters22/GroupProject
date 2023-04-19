@@ -90,7 +90,7 @@
 	
 <div class="container">
 	<h1>All Jobs</h1>
-	<h4><c:out value="${count }"></c:out> Jobs found</h4>
+	<h4><c:out value="${count}"></c:out> Jobs found</h4>
 
 <div class="row">
 <c:forEach var="j" items="${ theUser.jobs }">
