@@ -13,27 +13,39 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<meta charset="UTF-8">
+
+<link href="/css/allJobs.css" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://code.highcharts.com/css/highcharts.css" />
 <meta charset="UTF-8">
 <title>Get all Job</title>
 </head>
 <body>
-	<h1>Search Jobs</h1>
+
+<nav class="navbar bg-primary" data-bs-theme="light">
+  <div class="container-fluid">
+    <a class="navbar-brand">Job Tracker</a>
 	<form action="${pageContext.request.contextPath}/search" method="get">
 		<label for="query">Search by Position Name or Company:</label>
 		<input type="text" name="query" id="query" />
 		<input type="submit" value="Search" />
 	</form>
+  </div>
+</nav>
+	<div class="searchResults">
 	<c:if test="${not empty jobs}">
 		<h2>Search Results:</h2>
-		<table>
+		<table class="table table-striped border mt-3 table-sm">
 			<thead>
 				<tr>
-					<th>Position</th>
-					<th>Company</th>
-					<th>Location</th>
-					<th>Type</th>
-					<th>Status</th>
-					<th>Actions</th>
+					<th scope="col">Position</th>
+					<th scope="col">Company</th>
+					<th scope="col">Location</th>
+					<th scope="col">Type</th>
+					<th scope="col">Status</th>
+					<th scope="col">Actions</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -55,6 +67,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
+
 		</c:if>
 	<h1>All Jobs</h1>
 	<div>
@@ -76,7 +89,29 @@
 			<h3>Note to self: <c:out value="${j.note }"></c:out></h3>
 		<br />
 		</c:forEach>
-	</div>
 
+	</div>
+	
+<div class="getAll">
+	<h1>Get All Jobs</h1>
+	
+	<c:forEach var="j" items="${ theUser.jobs }">
+	<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Position: <c:out value="${j.position }"></c:out></h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Company Name: <c:out value="${j.company }"></c:out></h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Location: <c:out value="${j.location }"></c:out></h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Application Status: <c:out value="${j.status }"></c:out></h6>
+    <p class="card-text">Employment Type: <c:out value="${j.type }"></c:out></p>
+    <p class="card-text">Note to self: <c:out value="${j.note }"></c:out></p>
+    <a href="/job/${j.id}/edit" class="card-link">Edit</a>
+    <a href="/delete/${j.id}" class="card-link">Delete</a>
+  </div>
+</div>
+</c:forEach>
+
+</div>
+
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

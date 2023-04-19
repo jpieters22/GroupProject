@@ -156,10 +156,12 @@ public class HomeController {
 	@GetMapping("/get-data")
     public ResponseEntity<Map<String, Integer>> getPieChart() {
         Map<String, Integer> graphData = new TreeMap<>();
-        graphData.put("Declined", 1);
-        graphData.put("Pending", 2);
-        graphData.put("Interview", 3);
-        graphData.put("Total", 6);
+
+        graphData.put("Declined", 7);
+        graphData.put("Pending", 6);
+        graphData.put("Interview", 9);
+        graphData.put("Total", 22);
+
         return new ResponseEntity<>(graphData, HttpStatus.OK);
     }
 

@@ -1,12 +1,26 @@
 @charset "UTF-8";
+
 .topNav {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
+    padding-left: 10%;
     width: 100%;
 }
+
+a {
+    color: white;
+}
+
 h1 {
     color: white;
     background-color: #0D6EFD;
+    margin: 0;
+    padding-left: 8%;
 }
+
+.graph {
+	padding-top: 10%;
+}
+
