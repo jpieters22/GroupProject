@@ -35,7 +35,7 @@
 			<form:errors path="email" class="text-danger fw-semibold" />
 			<section class="mt-2 d-flex justify-content-between align-items-center">
 					<form:label class="form-label col-6" path="password">Password:</form:label>
-					<form:input class="form-control" path="password"/>
+					<form:input class="form-control" path="password" type="password"/>
 			</section>
 			<form:errors path="password" class="text-danger fw-semibold" />
 			<button class="btn btn-outline-primary">Login</button>
