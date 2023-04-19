@@ -23,7 +23,7 @@
 <title>App Tracker</title>
 </head>
 <body>	
-	<img id="image" src="https://wpreloaded.com/wp-content/uploads/2018/03/Application-Tracking-System_final-02-1024x355.jpg" 	alt="trackerImage" />
+	<img id="image" src="https://wpreloaded.com/wp-content/uploads/2018/03/Application-Tracking-System_final-02-1024x355.jpg" alt="trackerImage" />
 		<form:form class="row g-3 " action="/register" method="post" modelAttribute="newUser">
 		<h3>Register</h3>
   			<p class="col-md-6">
