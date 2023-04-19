@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -151,16 +150,18 @@ public class HomeController {
 	@GetMapping("/delete/{id}")
 	public String destroy(@PathVariable("id") Long id) {
 		jobService.deleteJob(id);
-		return "redirect:/dashboard";
+		return "redirect:/allJobs";
 	}
 	
 	@GetMapping("/get-data")
     public ResponseEntity<Map<String, Integer>> getPieChart() {
         Map<String, Integer> graphData = new TreeMap<>();
+
         graphData.put("Declined", 7);
         graphData.put("Pending", 6);
         graphData.put("Interview", 9);
         graphData.put("Total", 22);
+
         return new ResponseEntity<>(graphData, HttpStatus.OK);
     }
 
