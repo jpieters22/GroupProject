@@ -18,29 +18,25 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-    <main>
-    	<h1>${ oneJob.position }</h1>
-    	<h2>(added by <c:out value="${oneJob.owner.firstName}"></c:out>)</h2> 
-    	<br />
-    	<h3>Company Name: <c:out value="${oneJob.company}"></c:out></h3>
-    	<h3>Location: <c:out value="${oneJob.location}"></c:out></h3>
-    	<br />
-    	<h4>Employment Type: <c:out value="${oneJob.type}"></c:out></h4>
-    	<h4>Application Status: <c:out value="${oneJob.status}"></c:out></h4>
-    	<br />
-    	<section>
-		<div>
-			<c:if test="${ oneJob.owner.id == user_id }">
-				 | 
-				<a href="/job/${oneJob.id}/edit">Edit</a> | 
-				<a href="/delete/${oneJob.id}">Delete</a>
-			</c:if>
- 		</div>
-    	</section>
-    </main>
-    <footer>
+<body class="d-flex justify-content-center">
     
-    </footer>
+     <div class="col-sm-6 mb-3 mb-sm-0">
+    <div class="card">
+      <div class="card-body">
+      <h2 class="card-title">Position: <c:out value="${oneJob.position }"></c:out></h2>
+        <h5>(added by <c:out value="${oneJob.owner.firstName}"></c:out>)</h5>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Company Name: <c:out value="${oneJob.company }"></c:out></h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Location: <c:out value="${oneJob.location }"></c:out></h6>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Application Status: <c:out value="${oneJob.status }"></c:out></h6>
+        <p class="card-text">Employment Type: <c:out value="${oneJob.type }"></c:out></p>
+        <p class="card-text">Note to self: <c:out value="${oneJob.note }"></c:out></p>
+        <c:if test="${ oneJob.owner.id == user_id }">
+        <a href="/job/${oneJob.id}/edit" class="btn btn-primary">Edit</a>
+        <a href="/delete/${oneJob.id}" class="btn btn-primary">Delete</a>
+        </c:if>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

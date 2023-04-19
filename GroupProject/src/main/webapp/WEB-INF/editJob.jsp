@@ -67,10 +67,10 @@
 			<section>
 				<input type="hidden" name="owner" value="${ user_id }">
 			</section>
-			<c:if test="${ oneJob.owner.id == user_id }">
-				<button>Update</button>
-			</c:if>
-			<a href="/dashboard"><button>Cancel</button></a>
+			<c:if test="${ user_id == user_id }">
+                <button class="btn btn-outline-primary">Update</button>
+            </c:if>
+			<a href="/dashboard"><button type="button" class="btn btn-warning">Cancel</button></a>
 		</form:form>
 	</div>
 

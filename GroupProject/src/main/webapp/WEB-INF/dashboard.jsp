@@ -18,16 +18,7 @@
 <link href="/css/dashboard.css" rel="stylesheet">
 <link rel="stylesheet"
     href="https://code.highcharts.com/css/highcharts.css" />
-<script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <title>App Dashboard</title>
-<link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet"
     href="https://code.highcharts.com/css/highcharts.css" />
 <script
@@ -42,7 +33,7 @@
 <link href="css/dashboard.css" rel="stylesheet">
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+	<nav class="navbar navbar-expand-lg bg-primary text-light" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Job Tracker</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -58,6 +49,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/allJobs">View All Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
     </div>

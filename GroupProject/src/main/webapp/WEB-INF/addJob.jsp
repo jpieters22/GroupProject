@@ -71,7 +71,7 @@
 			<section>
 				<input type="hidden" name="owner" value="${ user_id }" />
 			</section>
-			<button>Save</button>
+			<button class="btn btn-outline-primary">Save</button>
 		</form:form>
 	</div>
 <!-- used for linking css stylesheet from resources/statci/css -->
