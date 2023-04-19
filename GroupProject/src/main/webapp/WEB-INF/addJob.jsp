@@ -17,9 +17,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Add Job</title>
-	<!-- used for linking css stylesheet from resources/statci/css -->
-	<link href="css/styles.css" rel="stylesheet">
-	<link href="css/form.css" rel="stylesheet">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 	<!-- used for linking css stylesheet from resources/static/css -->
 	<link href="/css/styles.css" rel="stylesheet">
@@ -77,8 +74,6 @@
 			<button>Save</button>
 		</form:form>
 	</div>
-
-
 <!-- used for linking css stylesheet from resources/statci/css -->
 <script src="js/styles.js"></script>
 <script src="js/form.js"></script>
