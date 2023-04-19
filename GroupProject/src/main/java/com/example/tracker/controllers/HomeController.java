@@ -1,11 +1,15 @@
 package com.example.tracker.controllers;
 
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -149,5 +153,15 @@ public class HomeController {
 		jobService.deleteJob(id);
 		return "redirect:/dashboard";
 	}
+	
+	@GetMapping("/get-data")
+    public ResponseEntity<Map<String, Integer>> getPieChart() {
+        Map<String, Integer> graphData = new TreeMap<>();
+        graphData.put("Declined", 7);
+        graphData.put("Pending", 6);
+        graphData.put("Interview", 9);
+        graphData.put("Total", 22);
+        return new ResponseEntity<>(graphData, HttpStatus.OK);
+    }
 
 }

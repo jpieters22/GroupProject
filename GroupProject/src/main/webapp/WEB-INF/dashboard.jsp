@@ -16,6 +16,15 @@
 <meta charset="UTF-8">
 
 <link href="css/dashboard.css" rel="stylesheet">
+<link rel="stylesheet"
+    href="https://code.highcharts.com/css/highcharts.css" />
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script  src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <title>App Dashboard</title>
 </head>
 <body>
@@ -70,10 +79,77 @@
     </div>
   </div>
 </div>
-
-	<a href="/view/${theUser.id}/edit">Edit User</a>
 	</div>
 	
+	<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
+    <div class="position-sticky">
+      <div class="list-group list-group-flush mx-3 mt-4">
+        <a href="/#" class="list-group-item list-group-item-action py-2 ripple active">
+          <i class="fas fa-chart-area fa-fw me-3"></i><span>Navigation</span>
+        </a>
+        <a href="/addJob" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-lock fa-fw me-3"></i><span>Add Job</span></a>
+        <a href="/view/${theUser.id}/edit" class="list-group-item list-group-item-action py-2 ripple"><i
+            class="fas fa-chart-line fa-fw me-3"></i><span>Update Account Info</span></a>
+        <a href="/allJobs" class="list-group-item list-group-item-action py-2 ripple">
+          <i class="fas fa-chart-pie fa-fw me-3"></i><span>View All Jobs</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+	
+	
+	<div align="center">
+        <h2>Job Stats</h2>
+    </div>
+    <figure class="highcharts-figure">
+        <div id="container-bar"></div>
+    </figure>
+    <script type="text/javascript">
+        $(document).ready(
+                function() {
+                    $.ajax({
+                        url : "/get-data",
+                        success : function(result) {
+                            var yearDtls = [];
+                            var countDtls = [];
+                            console.log(result);
+                            Object.keys(result).forEach(
+                                    function(key) {
+                                        yearDtls.push(key);
+                                        countDtls.push(result[key]);
+                                    });
+                            drawChart(yearDtls, countDtls);
+                        }
+                    });
+                });
+        function drawChart(year, viewCounts) {
+            Highcharts.chart('container-bar', {
+                chart : {
+                    type : 'column',
+                    styledMode : true
+                },
+                title : {
+                    text : 'Job Status Count'
+                },
+                xAxis : [ {
+                    title : {
+                        text : 'Status'
+                    },
+                    categories : year
+                } ],
+                yAxis : [ {
+                    className : 'highcharts-color-0',
+                    title : {
+                        text : 'Stat Count'
+                    }
+                } ],
+                series : [ {
+                    data : viewCounts
+                } ]
+            });
+        }
+    </script>	
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
