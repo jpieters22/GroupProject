@@ -46,7 +46,7 @@
 			<section class="mt-2 d-flex justify-content-between align-items-center">
 				<label class="form-label col-6" for="status">Application Status</label>
 				<select class="form-select" name="status" id="">
-					<option value=""></option>
+					<option value="">Choose...</option>
 					<option value="Pending">Pending</option>
 					<option value="Interview">Interview</option>
 					<option value="Declined">Declined</option>
