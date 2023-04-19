@@ -18,44 +18,44 @@
 <link rel="stylesheet" type="text/css" href="/css/styles.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Register</title>
 </head>
-<body>
-	<section class="container">
-		<h1>App Tracker</h1>
-		<h2>Register</h2>
-			<form:form action="/register" method="post" modelAttribute="newUser">
-				<p>
-			        <form:label path="firstName">First Name:</form:label>
-			        <form:errors path="firstName"/>
-			        <form:input path="firstName"/>
-			    </p>
-			    <p>
-			        <form:label path="lastName">Last Name:</form:label>
-			        <form:errors path="lastName"/>
-			        <form:input path="lastName"/>
-			    </p>
-			    <p>
-			        <form:label path="email">Email:</form:label>
-			        <form:errors path="email"/>
-			        <form:input path="email"/>
-			    </p>
-			    <p>
-			        <form:label path="password">Password:</form:label>
-			        <form:errors path="password"/>     
-			        <form:input type="password" path="password" min="0"/>
-			    </p>    
-			   	<p>
-			        <form:label path="confirmPassword">Confirm Password:</form:label>
-			        <form:errors path="confirmPassword"/>     
-			        <form:input type="password" path="confirmPassword" min="0" />
-			    </p>    
-			    <button>Submit</button>
-			</form:form>
-			<div class="page">
-				<h3>Have an account?</h3>
-				<a class="link" href="/">Login</a>
-			</div> 	
-	</section>
+<body class="d-flex justify-content-center">
+	<div class="container m-5">
+		<h1 class="text-center">Register</h1>
+		<form:form action="/register" class="mt-4" method="post" modelAttribute="newUser">
+			<section class="d-flex justify-content-between align-items-center">
+				<label class="form-label col-6" for="firstName">First Name:</label>
+				<input type="text" name="firstName" class="form-control">
+			</section>
+			<form:errors path="firstName" class="text-danger fw-semibold" />
+			<section class="mt-2 d-flex justify-content-between align-items-center">
+				<label class="form-label col-6" for="lastName">Last Name:</label>
+				<input type="text" name="lastName" class="form-control">
+			</section>
+			<form:errors path="lastName" class="text-danger fw-semibold" />
+			<section class="mt-2 d-flex justify-content-between align-items-center">
+				<label class="form-label col-6" for="email">Email:</label>
+				<input type="text" name="email" class="form-control">
+			</section>
+			<form:errors path="email" class="text-danger fw-semibold" />
+			<section class="mt-2 d-flex justify-content-between align-items-center">
+				<label class="form-label col-6" for="password">Password:</label>
+				<input type="password" name="password" class="form-control">
+			</section>
+			<form:errors path="password" class="text-danger fw-semibold" />
+			<section class="mt-2 d-flex justify-content-between align-items-center">
+				<label class="form-label col-6" for="confirmPassword">Confirm Password:</label>
+				<input type="password" name="confirmPassword" class="form-control">
+			</section>
+			<form:errors path="confirmPassword" class="text-danger fw-semibold" />
+			<button class="btn btn-outline-primary">Register and Login</button>
+		</form:form>
+		<h3>Have an Account?</h3>
+			<a class="link" href="/">Login</a>
+	</div>
+	
+	
+	
 </body>
 </html>

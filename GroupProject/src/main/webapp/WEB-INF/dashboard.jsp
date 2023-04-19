@@ -28,7 +28,7 @@
 <title>App Dashboard</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+	<nav class="navbar navbar-expand-lg bg-primary text-light" data-bs-theme="dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Job Tracker</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,6 +44,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/allJobs">View All Jobs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
         </li>
       </ul>
     </div>

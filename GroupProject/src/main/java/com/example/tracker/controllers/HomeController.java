@@ -148,7 +148,7 @@ public class HomeController {
 		return "allJobs.jsp";
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@GetMapping("/delete/{id}")
 	public String destroy(@PathVariable("id") Long id) {
 		jobService.deleteJob(id);
 		return "redirect:/dashboard";

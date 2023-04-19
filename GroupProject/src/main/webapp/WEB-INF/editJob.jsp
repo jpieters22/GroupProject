@@ -67,7 +67,10 @@
 			<section>
 				<input type="hidden" name="owner" value="${ user_id }">
 			</section>
-			<button>Update</button>
+			<c:if test="${ user_id == user_id }">
+                <button class="btn btn-outline-primary">Update</button>
+            </c:if>
+			<a href="/dashboard"><button type="button" class="btn btn-warning">Cancel</button></a>
 		</form:form>
 	</div>
 
