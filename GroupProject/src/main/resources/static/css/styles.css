@@ -6,4 +6,12 @@
 *{
     /* background-color: pink; */
 }
+#image {
+	width:75%;
+}
+.link {
+	text-decoration:none;
+	font-size: 20px;
+	margin-left:30px;
+}
 

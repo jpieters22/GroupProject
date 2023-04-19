@@ -55,7 +55,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-	</c:if>
+		</c:if>
 	<h1>All Jobs</h1>
 	<div>
 		<c:set var="count" scope="page" value="0" />
