@@ -87,33 +87,10 @@
 		</table>
 
 		</c:if>
-	<h1>All Jobs</h1>
-	<div>
-		<c:set var="count" scope="page" value="0" />
-		<c:forEach var="job" items="${ theUser.jobs }">
-			<c:if test="${job.position != null}">
-	   		<c:set var="count" scope="page" value="${count + 1}" />
-	   </c:if>
-		</c:forEach>
-		<h4><c:out value="${count }"></c:out> Jobs found</h4>
-	</div>
-	<div class="container">
-		<c:forEach var="j" items="${ theUser.jobs }">
-			<h3>Position: <c:out value="${j.position }"></c:out></h3>
-			<h3>Company Name: <c:out value="${j.company }"></c:out></h3>
-			<h3>Location: <c:out value="${j.location }"></c:out></h3>
-			<h3>Application Status: <c:out value="${j.status }"></c:out></h3>
-			<h3>Employment Type: <c:out value="${j.type }"></c:out></h3>
-			<h3>Note to self: <c:out value="${j.note }"></c:out></h3>
-		<br />
-		</c:forEach>
-
-	</div>
-</div>
-	
 	
 <div class="container">
 	<h1>All Jobs</h1>
+	<h4><c:out value="${count }"></c:out> Jobs found</h4>
 
 <div class="row">
 <c:forEach var="j" items="${ theUser.jobs }">

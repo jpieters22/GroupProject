@@ -51,7 +51,7 @@
 				<input type="password" name="confirmPassword" class="form-control">
 			</section>
 			<form:errors path="confirmPassword" class="text-danger fw-semibold" />
-			<button class="btn btn-outline-primary">Register and Login</button>
+			<button class="btn btn-outline-primary">Register</button>
 		</form:form>
 		<h3>Have an Account?</h3>
 			<a class="link" href="/">Login</a>
