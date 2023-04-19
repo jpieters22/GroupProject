@@ -27,7 +27,6 @@
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-<meta charset="UTF-8">
 <link href="css/dashboard.css" rel="stylesheet">
 </head>
 <body>
@@ -85,8 +84,7 @@
     <a href="/view/${theUser.id}/edit">Edit User</a>
     </div>
 
-	
-	<div align="center">
+<div align="center">
         <h2>Job Stats</h2>
     </div>
     <figure class="highcharts-figure">

@@ -8,8 +8,10 @@
 <%@ page isErrorPage="true" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<!-- importing style-->
 <!DOCTYPE html>
 <html>
+	
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,6 +74,10 @@
 			<button>Save</button>
 		</form:form>
 	</div>
+<!-- used for linking css stylesheet from resources/statci/css -->
+<script src="js/styles.js"></script>
+<script src="js/form.js"></script>
 
 </body>
+
 </html>
