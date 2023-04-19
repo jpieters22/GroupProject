@@ -90,6 +90,12 @@
 	
 <div class="container">
 	<h1>All Jobs</h1>
+        <c:set var="count" scope="page" value="0" />
+        <c:forEach var="job" items="${ theUser.jobs }">
+            <c:if test="${job.position != null}">
+               <c:set var="count" scope="page" value="${count + 1}" />
+       </c:if>
+        </c:forEach>
 	<h4><c:out value="${count}"></c:out> Jobs found</h4>
 
 <div class="row">
