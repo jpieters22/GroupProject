@@ -1,9 +1,5 @@
 @charset "UTF-8";
 
-body {
-	padding-left: 20%;
-}
-
 .topNav {
     display: flex;
     justify-content: space-evenly;
@@ -13,42 +9,17 @@ body {
     width: 100%;
 }
 
-/* .jobHeader{
-    background-color: #0D6EFD;
-} */
+a {
+    color: white;
+}
 
 h1 {
     color: white;
     background-color: #0D6EFD;
     margin: 0;
+    padding-left: 8%;
 }
 
-/* Sidebar */
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    padding: 58px 0 0; /*Height of navbar*/
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 5%), 0 2px 10px 0 rgb(0 0 0 / 5%);
-    z-index: 600;
-    }
-    
-@media (max-width: 800.98px) {
-.sidebar {
-    width: 100%;
-}
-}
-.sidebar .active {
-    border-radius: 5px;
-    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
-}
-    
-.sidebar-sticky {
-    position: relative;
-    top: 0;
-    height: calc(100vh - 48px);
-    padding-top: 0.5rem;
-    overflow-x: hidden;
-    overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+.graph {
+	padding-top: 10%;
 }

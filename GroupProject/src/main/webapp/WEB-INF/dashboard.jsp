@@ -28,7 +28,30 @@
 <title>App Dashboard</title>
 </head>
 <body>
-	<h1>Job Status Count</h1>
+	<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Job Tracker</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/addJob">Add Job</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/view/${theUser.id}/edit">Update Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/allJobs">View All Jobs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+	
+	
+	
 	<c:set var="countPending" scope="page" value="0" />
 	<c:set var="countDeclined" scope="page" value="0" />
 	<c:set var="countInterview" scope="page" value="0" />
@@ -81,24 +104,8 @@
 </div>
 	</div>
 	
-	<nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
-    <div class="position-sticky">
-      <div class="list-group list-group-flush mx-3 mt-4">
-        <a href="/#" class="list-group-item list-group-item-action py-2 ripple active">
-          <i class="fas fa-chart-area fa-fw me-3"></i><span>Navigation</span>
-        </a>
-        <a href="/addJob" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-lock fa-fw me-3"></i><span>Add Job</span></a>
-        <a href="/view/${theUser.id}/edit" class="list-group-item list-group-item-action py-2 ripple"><i
-            class="fas fa-chart-line fa-fw me-3"></i><span>Update Account Info</span></a>
-        <a href="/allJobs" class="list-group-item list-group-item-action py-2 ripple">
-          <i class="fas fa-chart-pie fa-fw me-3"></i><span>View All Jobs</span>
-        </a>
-      </div>
-    </div>
-  </nav>
 	
-	
+	<div class="graph">
 	<div align="center">
         <h2>Job Stats</h2>
     </div>
@@ -150,6 +157,7 @@
             });
         }
     </script>	
+    </div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>
