@@ -16,7 +16,7 @@
 <!-- For any Bootstrap that uses JS -->
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>View Job</title>
 </head>
 <body class="d-flex justify-content-center">
     

@@ -24,7 +24,6 @@
 <title>App Tracker</title>
 </head>
 <body class="d-flex justify-content-center">
-	<img id="image" src="https://wpreloaded.com/wp-content/uploads/2018/03/Application-Tracking-System_final-02-1024x355.jpg" alt="trackerImage" />
 	<div class="container m-5">
 		<h1 class="text-center">Login</h1>
 		<form:form action="/login" class="mt-4" method="post" modelAttribute="newLogin">

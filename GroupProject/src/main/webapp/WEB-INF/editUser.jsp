@@ -37,7 +37,7 @@
 					<form:label class="form-label col-6" path="lastName">Last Name:</form:label>
 					<form:input class="form-control" path="lastName"/>
 			</section>
-			<p>
+					<p>
 				    	<form:input type="hidden" path="email"/> 
 				    </p>
 				    <p>
