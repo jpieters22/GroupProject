@@ -23,7 +23,7 @@ public class UserService {
 			result.rejectValue("email", "error.email", "Email address already in use...Do you have an account?");
 		}
 		if(!newUser.getPassword().equals(newUser.getConfirmPassword())) {
-		    result.rejectValue("confirm", "Matches", "The Confirm Password must match Password!");
+		    result.rejectValue("confirmPassword", "Matches", "The Confirm Password must match Password!");
 		}
 		if(result.hasErrors()) {
 			return null;

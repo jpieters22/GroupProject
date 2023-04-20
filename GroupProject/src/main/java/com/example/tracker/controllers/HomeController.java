@@ -152,17 +152,5 @@ public class HomeController {
 		jobService.deleteJob(id);
 		return "redirect:/allJobs";
 	}
-	
-	@GetMapping("/get-data")
-    public ResponseEntity<Map<String, Integer>> getPieChart() {
-        Map<String, Integer> graphData = new TreeMap<>();
-
-        graphData.put("Declined", 7);
-        graphData.put("Pending", 6);
-        graphData.put("Interview", 9);
-        graphData.put("Total", 22);
-
-        return new ResponseEntity<>(graphData, HttpStatus.OK);
-    }
 
 }

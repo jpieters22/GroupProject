@@ -5,7 +5,7 @@
     justify-content: space-evenly;
     flex-direction: row;
     align-items: center;
-    padding-left: 10%;
+	padding-left: 11%;
     width: 100%;
 }
 
@@ -14,13 +14,28 @@ a {
 }
 
 h1 {
-    color: white;
-    background-color: #0D6EFD;
-    margin: 0;
-    padding-left: 8%;
+	padding-left: 2%;
 }
 
 .graph {
 	padding-top: 10%;
 }
 
+
+.jobGraph {
+    width:80% !important;
+    /* padding-left: 50px; */
+    /* margin: 5em !important; */
+  
+}
+
+canvas {
+    margin: 0 !important;
+     display:flex !important;
+    justify-content: center !important;
+    margin-left: 11.5em !important;
+    position: relative !important;
+    margin-bottom:2em;
+    padding: 2em !important;
+    background-color:whitesmoke;
+}

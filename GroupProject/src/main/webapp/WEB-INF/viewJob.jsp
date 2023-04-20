@@ -32,10 +32,10 @@
         <c:if test="${ oneJob.owner.id == user_id }">
         <a href="/job/${oneJob.id}/edit" class="btn btn-primary">Edit</a>
         <a href="/delete/${oneJob.id}" class="btn btn-primary">Delete</a>
+        <a href="/dashboard"><button type="button" class="btn btn-warning">Dashboard</button></a>
         </c:if>
       </div>
     </div>
   </div>
-
 </body>
 </html>

@@ -7,6 +7,8 @@ import com.example.tracker.models.Job;
 
 public interface JobService {
 	
+	//made an interface for search feature (update from Mar'Kebta)
+	
 	
 	//returns all jobs
 	public List<Job>allJobs();

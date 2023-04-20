@@ -45,7 +45,6 @@ public class User {
 	@Size(min = 8, max = 128, message = "Password must be between 8 and 128 characters")
 	private String password;
 	
-	
 	@Transient
 	@Size(min = 8, max = 128, message = "Confirm Password must be between 8 and 128 characters")
 	private String confirmPassword;
