@@ -24,7 +24,6 @@
     <div class="card">
       <div class="card-body">
       <h2 class="card-title">Position: <c:out value="${oneJob.position }"></c:out></h2>
-        <h5>(added by <c:out value="${oneJob.owner.firstName}"></c:out>)</h5>
         <h6 class="card-subtitle mb-2 text-body-secondary">Company Name: <c:out value="${oneJob.company }"></c:out></h6>
         <h6 class="card-subtitle mb-2 text-body-secondary">Location: <c:out value="${oneJob.location }"></c:out></h6>
         <h6 class="card-subtitle mb-2 text-body-secondary">Application Status: <c:out value="${oneJob.status }"></c:out></h6>
