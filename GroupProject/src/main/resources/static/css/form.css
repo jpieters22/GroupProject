@@ -1,38 +1,37 @@
 /* FOR ALL FORMS */
 form {
-	background-color: whitesmoke;
-	padding: 5em;
-	border-radius: 2.5em;
+  background-color: whitesmoke;
+  padding: 5em;
+  border-radius: 2.5em;
 }
 
 /* sections */
 form > section {
-    margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 /* labels within form sections */
 form > section > label {
-    font-weight: bolder;
+  font-weight: bolder;
 }
-
 
 /* button styling and pseudo */
 form > button {
-    border: 0.75px;
-    width: 5em;
-    padding: 1em;
-    border-radius: 0.5em;
+  border: 0.75px;
+  width: 5em;
+  padding: 1em;
+  border-radius: 0.5em;
 }
 form > button:hover {
-    background-color: rgb(121, 121, 121);
-    color: whitesmoke;
+  background-color: rgb(121, 121, 121);
+  color: whitesmoke;
 }
 form > button:active {
-    transform: scale(0.95);
+  transform: scale(0.95);
 }
 .btn {
-	border: 0.75px;
-    width: 5em;
-    padding: 1em;
-    border-radius: 0.5em;
+  border: 0.75px;
+  width: 5em;
+  padding: 1em;
+  border-radius: 0.5em;
 }

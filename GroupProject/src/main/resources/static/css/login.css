@@ -1,0 +1,59 @@
+/* FOR ALL FORMS */
+form {
+	background-color: whitesmoke;
+	padding: 2em;
+	height: 50em;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	border-radius: 0 2.5em 2.5em 0;
+}
+
+/* sections */
+form>section {
+	margin-bottom: 2em;
+}
+
+/* labels within form sections */
+form>section>label {
+	font-weight: bolder;
+	flex: 1;
+	margin-right: 0.75em;
+	text-align: center;
+}
+
+form>section>input {
+	flex: 2;
+	font-size: 1.5em !important;
+}
+
+form>section>input::placeholder {
+	color: #a8a8a8 !important;
+}
+/* button styling and pseudo */
+form>section>button {
+	background-color: #178afa !important;
+	color: white !important;
+	border: 0.75px;
+	font-size: 1.5em !important;
+	width: 5em;
+	padding: 0.5em !important;
+	border-radius: 0.5em !important;
+}
+
+form>section>button:hover {
+	background-color: rgb(121, 121, 121);
+	color: whitesmoke;
+}
+
+form>section>button:active {
+	transform: scale(0.95);
+}
+
+.btn {
+	border: 0.75px;
+	width: 5em;
+	padding: 1em;
+	border-radius: 0.5em;
+}
