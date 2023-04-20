@@ -3,15 +3,8 @@
 /* icons */
 /* <i class="fa-thin fa-objects-column fa-xs"></i> */
 
-*{
-    /* background-color: pink; */
-}
-#image {
-	width:75%;
-}
 .link {
-	text-decoration:none;
-	font-size: 20px;
-	margin-left:30px;
+  text-decoration: none;
+  font-size: 20px;
+  margin-left: 30px;
 }
-
